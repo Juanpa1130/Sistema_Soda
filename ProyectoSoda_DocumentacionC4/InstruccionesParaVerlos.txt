@@ -1,0 +1,1 @@
+Se abren los archivos con CTRL + Shift + V
