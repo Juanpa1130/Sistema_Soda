@@ -1,6 +1,7 @@
 ## 1. Requerimientos Funcionales
 
 | Requerimiento Funcional | Descripción |
+| ----- | ----- | 
 | Gestión de menú | El sistema deberá permitir registrar, modificar, activar y desactivar productos del menú. | 
 | Configuración de platos | El sistema deberá permitir configurar platos personalizables con sus respevtivas opciones | 
 | Selección de proteína | El sistema deberá obligar al cliente a seleccionar una proteína antes de agregar un casado al pedido. | 
