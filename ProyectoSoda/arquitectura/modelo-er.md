@@ -3,41 +3,69 @@
 ```mermaid
 erDiagram
 
-USUARIO ||--o{ PEDIDO : realiza
-PEDIDO ||--|{ DETALLE_PEDIDO : contiene
-PRODUCTO ||--o{ DETALLE_PEDIDO : pertenece
-PEDIDO ||--|| PAGO : genera
+    USUARIO ||--o{ PEDIDO : solicita
+    USUARIO ||--o{ PEDIDO : atiende
 
-USUARIO {
- int id_usuario
- string nombre
- string correo
- string rol
-}
+    PEDIDO ||--o{ PEDIDO_PLATILLO : contiene
+    PLATILLO ||--o{ PEDIDO_PLATILLO : pertenece
 
-PEDIDO {
- int id_pedido
- date fecha
- string estado
- decimal total
-}
+    PEDIDO ||--o{ PEDIDO_BEBIDA : contiene
+    BEBIDA ||--o{ PEDIDO_BEBIDA : pertenece
 
-DETALLE_PEDIDO {
- int cantidad
- decimal precio
- string observacion
-}
+    PEDIDO ||--|| PAGO : genera
+    METODO_PAGO ||--o{ PAGO : utiliza
 
-PRODUCTO {
- int id_producto
- string nombre
- decimal precio
- bool activo
-}
+    USUARIO {
+        int id_usuario PK
+        string nombre
+        string cedula
+        string correo
+        string contrasena
+        string rol
+    }
 
-PAGO {
- int id_pago
- string metodo
- decimal monto
-}
+    PEDIDO {
+        int id_pedido PK
+        int id_cliente FK
+        int id_empleado FK
+        date fecha
+        string estado
+    }
+
+    PLATILLO {
+        int id_platillo PK
+        string nombre
+        float precio
+    }
+
+    BEBIDA {
+        int id_bebida PK
+        string nombre
+        float precio
+    }
+
+    PEDIDO_PLATILLO {
+        int id_pedido FK
+        int id_platillo FK
+        int cantidad
+    }
+
+    PEDIDO_BEBIDA {
+        int id_pedido FK
+        int id_bebida FK
+        int cantidad
+    }
+
+    METODO_PAGO {
+        int id_metodo_pago PK
+        string nombre
+    }
+
+    PAGO {
+        int id_pago PK
+        int id_pedido FK
+        int id_metodo_pago FK
+        float subtotal
+        float total
+    }
 ```
