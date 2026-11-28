@@ -1,8 +1,5 @@
 # Diagrama de Casos de Uso - Sistema Soda
 
-## Descripción
-
-Este diagrama muestra las funcionalidades del Sistema Soda y los actores que interactúan con ellas. Cada caso de uso se deriva de los requerimientos funcionales de `docs/01-requisitos/requisitos.md` y se identifica con su RF (por ejemplo, RF-03).
 
 ## Actores
 
