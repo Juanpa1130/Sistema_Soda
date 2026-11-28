@@ -9,6 +9,7 @@ classDiagram
     Usuario : +string cedula
     Usuario : +string correo
     Usuario : +string contraseña
+    Usuario : +string rol
     class Cliente{
         +int IDCliente
         +crearCliente()
